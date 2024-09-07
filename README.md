@@ -7,6 +7,7 @@ This project is a research paper search application that allows users to search 
 ## Project Structure
 
 research-paper/ 
+
       ├── backend/ 
              └── service.js
       └── frontend/
