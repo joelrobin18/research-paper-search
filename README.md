@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a research paper search application that allows users to search for and save research papers. It consists of a frontend built with React and a backend with Node.js (or Python Flask).
+This project is a research paper search application that allows users to search for and save research papers. It consists of a frontend built with React and a backend with Node.js.
 
 ## Project Structure
 
