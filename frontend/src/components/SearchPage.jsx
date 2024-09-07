@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import dummyPapers from '../data/dummyPapers'; 
 
 const SearchPage = () => {
+  const backend_url = process.env.REACT_APP_BACKEND_URL;
+
   const [searchTerm, setSearchTerm] = useState('');
   const [papers, setPapers] = useState(dummyPapers);
 
@@ -17,7 +19,7 @@ const SearchPage = () => {
 
   const savePaper = async (paper) => {
     try {
-      const response = await axios.post('http://localhost:5000/save-paper', paper);
+      const response = await axios.post(`${backend_url}/save-paper`, paper);
       toast.success(response.data.message); 
     } catch (error) {
       toast.error('Failed to save the paper.'); 

@@ -4,19 +4,21 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SavedPapersPage = () => {
+  const backend_url = process.env.REACT_APP_BACKEND_URL;
+
   const [savedPapers, setSavedPapers] = useState([]);
 
   useEffect(() => {
     const fetchSavedPapers = async () => {
-      const response = await axios.get('http://localhost:5000/saved-papers');
+      const response = await axios.get(`${backend_url}/saved-papers`);
       setSavedPapers(response.data);
     };
     fetchSavedPapers();
-  }, []);
+  }, [backend_url]);
 
   const removePaper = async (title) => {
     try {
-    await axios.delete(`http://localhost:5000/remove-paper/${title}`);
+    await axios.delete(`${backend_url}/remove-paper/${title}`);
     setSavedPapers(savedPapers.filter(paper => paper.title !== title));
     toast.success('Paper removed successfully');
     } catch (error) {
