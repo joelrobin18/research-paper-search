@@ -6,7 +6,15 @@ This project is a research paper search application that allows users to search 
 
 ## Project Structure
 
-research-paper/ ├── backend/ └── frontend/
+research-paper/ 
+      ├── backend/ 
+             └── service.js
+      └── frontend/
+             ├── components
+                   ├── SearchPage
+                   └── SavedPapersPage
+             └── data
+                   └── dummyPapers
 
 ## Getting Started
 
@@ -70,7 +78,7 @@ If any other service is running in port 5000, terminate them and restart this se
 cd frontend
 ```
 
-##### 2.Install the frontend dependencies:
+##### 2. Install the frontend dependencies:
 
 ```bash
 npm install
@@ -110,8 +118,8 @@ If the port is already occupied by some other apps, then the app would be runnin
 
 #### Notes
 
-Ensure the backend server is running before starting the frontend application.
+1. Ensure the backend server is running before starting the frontend application.
 
-The backend server provides API endpoints for saving and removing papers.
+2. The backend server provides API endpoints for saving and removing papers.
 
-Modify the API URLs in the frontend if your backend server is running on a different port or address.
+3. Modify the API URLs in the frontend if your backend server is running on a different port or address.
